@@ -71,7 +71,7 @@ a:hover {
 .wp-block-post-content p,
 .wp-block-post-content li {
 	line-height: 1.75;
-	color: #D0D0D0;
+	color: var(--pls-text);
 }
 
 .wp-block-post-content h2,
@@ -85,7 +85,7 @@ a:hover {
 	border-left: 3px solid var(--pls-accent);
 	padding-left: 1.5rem;
 	margin-left: 0;
-	color: #aaa;
+	color: var(--pls-text-muted);
 	font-style: italic;
 }
 
@@ -133,7 +133,7 @@ a:hover {
 }
 
 .pulashock-header.is-scrolled {
-	box-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+	box-shadow: 0 1px 12px rgba(0, 0, 0, 0.08);
 }
 
 .pulashock-header .wp-block-site-logo img {
@@ -475,7 +475,7 @@ a:hover {
 }
 
 .pulashock-section-header {
-	margin-bottom: 0;
+	margin-bottom: 1.5rem;
 	padding-bottom: 1rem;
 	border-bottom: 1px solid var(--pls-border);
 }
@@ -500,54 +500,18 @@ a:hover {
 
 .pulashock-posts-section {
 	background-color: var(--pls-bg);
+	border-top: 1px solid var(--pls-border);
 }
 
-/* ── Grid container ── */
+/* ── Grid container — uniform 3 columns ── */
 .pulashock-magazine-grid {
 	display: grid !important;
-	grid-template-columns: repeat(12, 1fr) !important;
-	grid-template-rows: auto auto auto !important;
-	gap: 1px !important;
-	background-color: var(--pls-border) !important;
+	grid-template-columns: repeat(3, 1fr) !important;
+	gap: 1.5rem !important;
 	list-style: none !important;
 	padding: 0 !important;
 	margin: 0 !important;
 }
-
-/* Each li / post item */
-.pulashock-magazine-grid > li,
-.pulashock-magazine-grid > * {
-	background-color: var(--pls-bg);
-}
-
-/* ── Item placement ── */
-/* Hero: large left block spanning 2 rows */
-.pulashock-magazine-grid > li:nth-child(1),
-.pulashock-magazine-grid > *:nth-child(1) {
-	grid-column: 1 / 9;
-	grid-row: 1 / 3;
-}
-/* Right column — top */
-.pulashock-magazine-grid > li:nth-child(2),
-.pulashock-magazine-grid > *:nth-child(2) {
-	grid-column: 9 / 13;
-	grid-row: 1;
-}
-/* Right column — bottom */
-.pulashock-magazine-grid > li:nth-child(3),
-.pulashock-magazine-grid > *:nth-child(3) {
-	grid-column: 9 / 13;
-	grid-row: 2;
-}
-/* Bottom row — 3 equal thirds */
-.pulashock-magazine-grid > li:nth-child(4),
-.pulashock-magazine-grid > *:nth-child(4) { grid-column: 1 / 5; grid-row: 3; }
-
-.pulashock-magazine-grid > li:nth-child(5),
-.pulashock-magazine-grid > *:nth-child(5) { grid-column: 5 / 9; grid-row: 3; }
-
-.pulashock-magazine-grid > li:nth-child(6),
-.pulashock-magazine-grid > *:nth-child(6) { grid-column: 9 / 13; grid-row: 3; }
 
 /* ── Base card ── */
 .pulashock-post-card {
@@ -556,167 +520,27 @@ a:hover {
 	display: flex !important;
 	flex-direction: column !important;
 	height: 100%;
-	transition: background-color var(--pls-transition);
+	border: 1px solid var(--pls-border);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* ── Hero card (item 1): image fills card as background overlay ── */
-.pulashock-magazine-grid > li:nth-child(1) .pulashock-post-card,
-.pulashock-magazine-grid > *:nth-child(1) .pulashock-post-card {
-	position: relative;
-	min-height: 520px;
+.pulashock-post-card:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
-.pulashock-magazine-grid > li:nth-child(1) .wp-block-post-featured-image,
-.pulashock-magazine-grid > *:nth-child(1) .wp-block-post-featured-image {
-	position: absolute !important;
-	inset: 0 !important;
-	height: 100% !important;
-}
-
-.pulashock-magazine-grid > li:nth-child(1) .wp-block-post-featured-image img,
-.pulashock-magazine-grid > *:nth-child(1) .wp-block-post-featured-image img {
-	width: 100% !important;
-	height: 100% !important;
-	object-fit: cover !important;
-	aspect-ratio: unset !important;
-	transition: transform 0.7s ease;
-}
-
-.pulashock-magazine-grid > li:nth-child(1):hover .wp-block-post-featured-image img,
-.pulashock-magazine-grid > *:nth-child(1):hover .wp-block-post-featured-image img {
-	transform: scale(1.04);
-}
-
-/* Gradient overlay over hero image */
-.pulashock-magazine-grid > li:nth-child(1) .pulashock-post-card::after,
-.pulashock-magazine-grid > *:nth-child(1) .pulashock-post-card::after {
-	content: '';
-	position: absolute;
-	inset: 0;
-	background: linear-gradient(to top, rgba(8,8,8,0.97) 0%, rgba(8,8,8,0.55) 55%, transparent 100%);
-	z-index: 1;
-}
-
-/* Hero card body: pinned to bottom */
-.pulashock-magazine-grid > li:nth-child(1) .pulashock-post-card-body,
-.pulashock-magazine-grid > *:nth-child(1) .pulashock-post-card-body {
-	position: absolute !important;
-	bottom: 0 !important;
-	left: 0 !important;
-	right: 0 !important;
-	z-index: 2;
-	background: none !important;
-	padding: 2rem 2.25rem 2.25rem !important;
-}
-
-/* Hero post title — larger */
-.pulashock-magazine-grid > li:nth-child(1) .wp-block-post-title a,
-.pulashock-magazine-grid > *:nth-child(1) .wp-block-post-title a {
-	font-size: clamp(1.55rem, 2vw, 2.2rem) !important;
-	line-height: 1.1 !important;
-	-webkit-line-clamp: 3 !important;
-}
-
-/* Hero excerpt — 3 lines */
-.pulashock-magazine-grid > li:nth-child(1) .wp-block-post-excerpt p,
-.pulashock-magazine-grid > *:nth-child(1) .wp-block-post-excerpt p {
-	-webkit-line-clamp: 3 !important;
-	font-size: 0.9rem !important;
-}
-
-/* ── Side column cards (2–3): horizontal layout ── */
-.pulashock-magazine-grid > li:nth-child(2) .pulashock-post-card,
-.pulashock-magazine-grid > *:nth-child(2) .pulashock-post-card,
-.pulashock-magazine-grid > li:nth-child(3) .pulashock-post-card,
-.pulashock-magazine-grid > *:nth-child(3) .pulashock-post-card {
-	flex-direction: row !important;
-	align-items: stretch;
-	border-bottom: 1px solid var(--pls-border);
-	min-height: 160px;
-}
-
-.pulashock-magazine-grid > li:nth-child(2) .wp-block-post-featured-image,
-.pulashock-magazine-grid > *:nth-child(2) .wp-block-post-featured-image,
-.pulashock-magazine-grid > li:nth-child(3) .wp-block-post-featured-image,
-.pulashock-magazine-grid > *:nth-child(3) .wp-block-post-featured-image {
-	flex: 0 0 130px !important;
-	width: 130px !important;
-}
-
-.pulashock-magazine-grid > li:nth-child(2) .wp-block-post-featured-image img,
-.pulashock-magazine-grid > *:nth-child(2) .wp-block-post-featured-image img,
-.pulashock-magazine-grid > li:nth-child(3) .wp-block-post-featured-image img,
-.pulashock-magazine-grid > *:nth-child(3) .wp-block-post-featured-image img {
-	height: 100% !important;
-	width: 100% !important;
-	object-fit: cover !important;
-	aspect-ratio: unset !important;
-	transition: transform 0.5s ease;
-}
-
-.pulashock-magazine-grid > li:nth-child(2):hover .wp-block-post-featured-image img,
-.pulashock-magazine-grid > *:nth-child(2):hover .wp-block-post-featured-image img,
-.pulashock-magazine-grid > li:nth-child(3):hover .wp-block-post-featured-image img,
-.pulashock-magazine-grid > *:nth-child(3):hover .wp-block-post-featured-image img {
-	transform: scale(1.06);
-}
-
-.pulashock-magazine-grid > li:nth-child(2) .pulashock-post-card-body,
-.pulashock-magazine-grid > *:nth-child(2) .pulashock-post-card-body,
-.pulashock-magazine-grid > li:nth-child(3) .pulashock-post-card-body,
-.pulashock-magazine-grid > *:nth-child(3) .pulashock-post-card-body {
-	padding: 1rem 1.25rem !important;
-}
-
-/* Side card title — smaller */
-.pulashock-magazine-grid > li:nth-child(2) .wp-block-post-title a,
-.pulashock-magazine-grid > *:nth-child(2) .wp-block-post-title a,
-.pulashock-magazine-grid > li:nth-child(3) .wp-block-post-title a,
-.pulashock-magazine-grid > *:nth-child(3) .wp-block-post-title a {
-	font-size: clamp(0.85rem, 1.2vw, 1rem) !important;
-	-webkit-line-clamp: 3 !important;
-}
-
-/* Hide excerpt on side cards */
-.pulashock-magazine-grid > li:nth-child(2) .wp-block-post-excerpt,
-.pulashock-magazine-grid > *:nth-child(2) .wp-block-post-excerpt,
-.pulashock-magazine-grid > li:nth-child(3) .wp-block-post-excerpt,
-.pulashock-magazine-grid > *:nth-child(3) .wp-block-post-excerpt {
-	display: none;
-}
-
-/* ── Bottom row cards (4–6): compact vertical ── */
-.pulashock-magazine-grid > li:nth-child(4) .pulashock-post-card,
-.pulashock-magazine-grid > *:nth-child(4) .pulashock-post-card,
-.pulashock-magazine-grid > li:nth-child(5) .pulashock-post-card,
-.pulashock-magazine-grid > *:nth-child(5) .pulashock-post-card,
-.pulashock-magazine-grid > li:nth-child(6) .pulashock-post-card,
-.pulashock-magazine-grid > *:nth-child(6) .pulashock-post-card {
-	border-top: 1px solid var(--pls-border);
-}
-
-.pulashock-magazine-grid > li:nth-child(n+4) .wp-block-post-title a,
-.pulashock-magazine-grid > *:nth-child(n+4) .wp-block-post-title a {
-	font-size: 0.95rem !important;
-	-webkit-line-clamp: 2 !important;
-}
-
-/* Hide excerpt on bottom row */
-.pulashock-magazine-grid > li:nth-child(n+4) .wp-block-post-excerpt,
-.pulashock-magazine-grid > *:nth-child(n+4) .wp-block-post-excerpt {
-	display: none;
-}
-
-/* ── Card shared styles ── */
+/* ── Card images: uniform 16/9 ── */
 .pulashock-post-card .wp-block-post-featured-image {
 	overflow: hidden;
 	flex-shrink: 0;
+	aspect-ratio: 16 / 9;
 }
 
 .pulashock-post-card .wp-block-post-featured-image img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+	width: 100% !important;
+	height: 100% !important;
+	object-fit: cover !important;
+	aspect-ratio: unset !important;
 	transition: transform 0.5s ease;
 }
 
@@ -725,7 +549,7 @@ a:hover {
 }
 
 .pulashock-post-card .wp-block-post-featured-image:not(:has(img)) {
-	background: linear-gradient(135deg, var(--pls-surface) 0%, var(--pls-card) 100%);
+	background: linear-gradient(135deg, var(--pls-surface) 0%, var(--pls-border) 100%);
 	aspect-ratio: 16/9;
 }
 
@@ -826,6 +650,7 @@ a:hover {
 
 .pulashock-reviews-section {
 	background-color: var(--pls-surface);
+	border-top: 1px solid var(--pls-border);
 }
 
 .pulashock-carousel-wrapper {
@@ -833,13 +658,14 @@ a:hover {
 	display: flex;
 	flex-direction: column;
 	gap: 1.5rem;
+	overflow: hidden;
 }
 
 /* ── Track ── */
 .pulashock-carousel-track {
 	display: flex !important;
 	flex-wrap: nowrap !important;
-	gap: 0 !important;
+	gap: 1rem !important;
 	overflow-x: auto;
 	scroll-snap-type: x mandatory;
 	-webkit-overflow-scrolling: touch;
@@ -859,35 +685,37 @@ a:hover {
 
 /* ── Review card ── */
 .pulashock-review-card {
-	flex: 0 0 268px !important;
-	width: 268px !important;
-	min-width: 268px;
+	flex: 0 0 320px !important;
+	width: 320px !important;
+	min-width: 320px;
+	height: 420px;
 	scroll-snap-align: start;
 	background-color: var(--pls-card);
-	border-right: 1px solid var(--pls-border);
+	border: 1px solid var(--pls-border);
 	overflow: hidden;
 	display: flex !important;
 	flex-direction: column !important;
-	transition: background-color var(--pls-transition);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
 	position: relative;
 }
 
 .pulashock-review-card:hover {
-	background-color: #1f1f1f;
+	transform: translateY(-4px);
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
-/* Top accent bar on hover */
+/* Top accent bar — partially visible, full on hover */
 .pulashock-review-card::before {
 	content: '';
 	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
-	height: 3px;
+	height: 2px;
 	background: var(--pls-accent);
-	transform: scaleX(0);
+	transform: scaleX(0.12);
 	transform-origin: left;
-	transition: transform 0.35s ease;
+	transition: transform 0.4s ease;
 	z-index: 5;
 }
 
@@ -901,9 +729,13 @@ a:hover {
 	overflow: hidden;
 }
 
+.pulashock-review-card .wp-block-post-featured-image {
+	aspect-ratio: 4 / 3;
+}
+
 .pulashock-review-card .wp-block-post-featured-image img {
 	width: 100%;
-	height: 180px;
+	height: 100%;
 	object-fit: cover;
 	display: block;
 	transition: transform 0.6s ease;
@@ -915,8 +747,8 @@ a:hover {
 
 /* No image fallback */
 .pulashock-review-card .wp-block-post-featured-image:not(:has(img)) {
-	height: 180px;
-	background: linear-gradient(135deg, var(--pls-bg) 0%, #1c1c1c 100%);
+	aspect-ratio: 4 / 3;
+	background: linear-gradient(135deg, var(--pls-surface) 0%, var(--pls-border) 100%);
 }
 
 /* Card body */
@@ -931,7 +763,7 @@ a:hover {
 	color: var(--pls-text) !important;
 	font-family: var(--pls-font-heading);
 	font-weight: 700;
-	font-size: 1rem;
+	font-size: 1.05rem;
 	line-height: 1.25;
 	text-decoration: none;
 	transition: color var(--pls-transition);
@@ -941,7 +773,7 @@ a:hover {
 	overflow: hidden;
 }
 
-.pulashock-review-card .wp-block-post-title a:hover {
+.pulashock-review-card:hover .wp-block-post-title a {
 	color: var(--pls-accent) !important;
 }
 
@@ -1060,33 +892,168 @@ a:hover {
 
 /* ─── Single Post ─────────────────────────────────────────────────────────── */
 
-.pulashock-single-hero {
-	border-bottom: 1px solid var(--pls-border);
+.pulashock-single-header {
+	background-color: var(--pls-bg);
 }
 
-.pulashock-single-hero .wp-block-post-title {
+/* Category badge — centered */
+.pulashock-single-category {
+	justify-content: center;
+}
+
+.pulashock-single-category a {
+	color: var(--pls-accent) !important;
+	font-family: var(--pls-font-body);
+	font-size: 0.65rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	background: rgba(221, 51, 51, 0.08);
+	padding: 0.2em 0.6em;
+	border-left: 2px solid var(--pls-accent);
+	transition: background-color var(--pls-transition);
+}
+
+.pulashock-single-category a:hover {
+	background: rgba(221, 51, 51, 0.15);
+}
+
+/* Title */
+.pulashock-single-title {
 	font-family: var(--pls-font-heading) !important;
-	font-size: clamp(1.75rem, 4vw, 3rem) !important;
+	font-size: clamp(1.75rem, 4.5vw, 2.8rem) !important;
 	font-weight: 700 !important;
-	line-height: 1.1 !important;
+	line-height: 1.12 !important;
+	letter-spacing: -0.01em !important;
+	color: var(--pls-text);
+	max-width: 820px;
 }
 
+/* Featured image */
+.pulashock-single-featured {
+	margin-bottom: 0;
+}
+
+.pulashock-single-featured .wp-block-post-featured-image {
+	overflow: hidden;
+}
+
+.pulashock-single-featured .wp-block-post-featured-image img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* Content area */
 .pulashock-single-content {
 	background-color: var(--pls-bg);
 }
 
+/* Wide images inside content */
+.pulashock-single-content .wp-block-post-content .wp-block-image.alignwide {
+	max-width: 960px;
+}
+
+/* Tags */
+.pulashock-single-tags a {
+	color: var(--pls-text-muted) !important;
+	transition: color var(--pls-transition);
+}
+
+.pulashock-single-tags a:hover {
+	color: var(--pls-accent) !important;
+}
+
 /* Post navigation */
+.pulashock-post-nav {
+	border-top: 1px solid var(--pls-border);
+	padding-top: 1.25rem !important;
+}
+
 .wp-block-post-navigation-link a {
 	font-family: var(--pls-font-heading);
 	font-weight: 700;
-	font-size: 0.85rem;
+	font-size: 0.8rem;
 	text-transform: uppercase;
-	letter-spacing: 0.05em;
+	letter-spacing: 0.06em;
 	color: var(--pls-text-muted);
 	transition: color var(--pls-transition);
 }
 
 .wp-block-post-navigation-link a:hover {
+	color: var(--pls-accent);
+}
+
+/* Comments */
+.pulashock-comments {
+	max-width: 720px;
+	margin-inline: auto;
+}
+
+.pulashock-comments .wp-block-comments-title {
+	font-family: var(--pls-font-heading) !important;
+	border-bottom: 1px solid var(--pls-border);
+	padding-bottom: 0.75rem;
+}
+
+.pulashock-comments .wp-block-comment-template {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.pulashock-comments .wp-block-comment-template > li {
+	border-bottom: 1px solid var(--pls-border);
+	padding: 1.25rem 0;
+}
+
+.pulashock-comments .wp-block-comment-reply-link {
+	color: var(--pls-accent);
+	font-family: var(--pls-font-heading);
+}
+
+.pulashock-comments .wp-block-post-comments-form .comment-reply-title {
+	font-family: var(--pls-font-heading);
+	font-size: 1.1rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+
+.pulashock-comments .wp-block-post-comments-form textarea,
+.pulashock-comments .wp-block-post-comments-form input[type="text"],
+.pulashock-comments .wp-block-post-comments-form input[type="email"],
+.pulashock-comments .wp-block-post-comments-form input[type="url"] {
+	border: 1px solid var(--pls-border);
+	border-radius: 0;
+	padding: 0.65rem 1rem;
+	font-family: var(--pls-font-body);
+	font-size: 0.9rem;
+	transition: border-color var(--pls-transition);
+}
+
+.pulashock-comments .wp-block-post-comments-form textarea:focus,
+.pulashock-comments .wp-block-post-comments-form input:focus {
+	border-color: var(--pls-accent);
+	outline: none;
+}
+
+.pulashock-comments .wp-block-post-comments-form .submit {
+	background: var(--pls-accent);
+	color: var(--pls-bg);
+	border: 2px solid var(--pls-accent);
+	font-family: var(--pls-font-heading);
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	padding: 0.65rem 1.5rem;
+	border-radius: 0;
+	cursor: pointer;
+	transition: background-color var(--pls-transition), color var(--pls-transition);
+}
+
+.pulashock-comments .wp-block-post-comments-form .submit:hover {
+	background: transparent;
 	color: var(--pls-accent);
 }
 
@@ -1106,6 +1073,150 @@ a:hover {
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
 	filter: drop-shadow(0 0 40px rgba(221, 51, 51, 0.3));
+}
+
+/* ─── Blog List Layout ────────────────────────────────────────────────────── */
+
+.pulashock-blog-section {
+	background-color: var(--pls-bg);
+}
+
+/* Article list — vertical stack */
+.pulashock-blog-list {
+	display: flex !important;
+	flex-direction: column !important;
+	gap: 0 !important;
+	list-style: none !important;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+/* Single list item — horizontal card */
+.pulashock-blog-item {
+	padding: 1.5rem 0;
+	border-bottom: 1px solid var(--pls-border);
+	align-items: flex-start !important;
+	transition: background-color var(--pls-transition);
+}
+
+.pulashock-blog-list > li:first-child .pulashock-blog-item {
+	padding-top: 0;
+}
+
+/* Thumbnail */
+.pulashock-blog-item-thumb {
+	flex: 0 0 280px !important;
+	width: 280px !important;
+	overflow: hidden;
+}
+
+.pulashock-blog-item-thumb img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.5s ease;
+}
+
+.pulashock-blog-item:hover .pulashock-blog-item-thumb img {
+	transform: scale(1.04);
+}
+
+/* Body text */
+.pulashock-blog-item-body {
+	flex: 1;
+	min-width: 0;
+}
+
+.pulashock-blog-item-body .wp-block-post-title a {
+	color: var(--pls-text) !important;
+	text-decoration: none;
+	font-family: var(--pls-font-heading);
+	transition: color var(--pls-transition);
+}
+
+.pulashock-blog-item-body .wp-block-post-title a:hover {
+	color: var(--pls-accent) !important;
+}
+
+.pulashock-blog-item-body .wp-block-post-excerpt p {
+	margin: 0;
+}
+
+.pulashock-blog-item-body .wp-block-post-excerpt__more-link {
+	display: none;
+}
+
+/* ─── Blog Sidebar ───────────────────────────────────────────────────────── */
+
+.pulashock-blog-sidebar {
+	position: sticky;
+	top: calc(var(--pls-header-h) + 2rem);
+	align-self: flex-start;
+}
+
+.pulashock-sidebar-title {
+	font-family: var(--pls-font-heading) !important;
+	padding-bottom: 0.5rem;
+	border-bottom: 2px solid var(--pls-accent);
+	margin-bottom: 0;
+}
+
+/* Categories list */
+.pulashock-sidebar-categories {
+	list-style: none !important;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.pulashock-sidebar-categories li {
+	border-bottom: 1px solid var(--pls-border);
+}
+
+.pulashock-sidebar-categories li a {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.6rem 0;
+	color: var(--pls-text) !important;
+	font-family: var(--pls-font-body);
+	font-size: 0.875rem;
+	text-decoration: none;
+	transition: color var(--pls-transition), padding-left var(--pls-transition);
+}
+
+.pulashock-sidebar-categories li a:hover {
+	color: var(--pls-accent) !important;
+	padding-left: 0.4rem;
+}
+
+/* Post count in parentheses */
+.pulashock-sidebar-categories li a::after {
+	font-size: 0.75rem;
+	color: var(--pls-text-muted);
+	font-weight: 400;
+}
+
+/* Tag cloud */
+.pulashock-sidebar-tags {
+	display: flex !important;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+}
+
+.pulashock-sidebar-tags a {
+	color: var(--pls-text-muted) !important;
+	background: var(--pls-surface);
+	border: 1px solid var(--pls-border);
+	padding: 0.25em 0.6em !important;
+	font-family: var(--pls-font-body) !important;
+	text-decoration: none;
+	transition: background-color var(--pls-transition), color var(--pls-transition), border-color var(--pls-transition);
+}
+
+.pulashock-sidebar-tags a:hover {
+	background: var(--pls-accent) !important;
+	border-color: var(--pls-accent) !important;
+	color: var(--pls-bg) !important;
 }
 
 /* ─── Pagination ──────────────────────────────────────────────────────────── */
@@ -1147,38 +1258,49 @@ a:hover {
 /* ─── Footer ──────────────────────────────────────────────────────────────── */
 
 .pulashock-footer {
-	border-top: 1px solid var(--pls-border);
+	background-color: #111111 !important;
+	color: #ffffff;
+	border-top: none;
+	margin-top: 0 !important;
+}
+
+footer.wp-block-template-part {
+	margin-top: 0 !important;
 }
 
 .pulashock-footer .wp-block-site-logo img {
 	max-height: 40px;
 	width: auto;
-	opacity: 0.8;
+	opacity: 0.85;
 	transition: opacity var(--pls-transition);
+	filter: brightness(0) invert(1);
 }
 
 .pulashock-footer .wp-block-site-logo img:hover {
 	opacity: 1;
 }
 
+.pulashock-footer .pulashock-footer__tagline {
+	color: rgba(255, 255, 255, 0.6) !important;
+}
+
 .pulashock-footer .wp-block-navigation-item__content {
 	font-family: var(--pls-font-body);
 	font-size: 0.875rem;
-	color: var(--pls-text-muted);
+	color: rgba(255, 255, 255, 0.7) !important;
 	transition: color var(--pls-transition);
 }
 
 .pulashock-footer .wp-block-navigation-item__content:hover {
-	color: var(--pls-accent);
+	color: var(--pls-accent) !important;
 }
 
 .pulashock-footer__divider {
-	border-color: var(--pls-border) !important;
+	border-color: rgba(255, 255, 255, 0.12) !important;
 }
 
-.pulashock-copyright {
-	font-size: 0.8rem;
-	color: var(--pls-text-muted);
+.pulashock-footer__bottom p {
+	color: rgba(255, 255, 255, 0.45) !important;
 }
 
 /* ─── Scrollbar ───────────────────────────────────────────────────────────── */
@@ -1248,56 +1370,10 @@ a:hover {
 /* ─── Responsive ──────────────────────────────────────────────────────────── */
 
 @media (max-width: 1024px) {
-	/* Magazine grid — tablet: hero full width, side 2-col, bottom row 2-col */
-	.pulashock-magazine-grid > li:nth-child(1),
-	.pulashock-magazine-grid > *:nth-child(1) {
-		grid-column: 1 / 13;
-		grid-row: 1;
+	/* Magazine grid — tablet: 2 columns */
+	.pulashock-magazine-grid {
+		grid-template-columns: repeat(2, 1fr) !important;
 	}
-
-	.pulashock-magazine-grid > li:nth-child(2),
-	.pulashock-magazine-grid > *:nth-child(2) {
-		grid-column: 1 / 7;
-		grid-row: 2;
-	}
-
-	.pulashock-magazine-grid > li:nth-child(3),
-	.pulashock-magazine-grid > *:nth-child(3) {
-		grid-column: 7 / 13;
-		grid-row: 2;
-	}
-
-	.pulashock-magazine-grid > li:nth-child(2) .pulashock-post-card,
-	.pulashock-magazine-grid > *:nth-child(2) .pulashock-post-card,
-	.pulashock-magazine-grid > li:nth-child(3) .pulashock-post-card,
-	.pulashock-magazine-grid > *:nth-child(3) .pulashock-post-card {
-		flex-direction: column !important;
-	}
-
-	.pulashock-magazine-grid > li:nth-child(2) .wp-block-post-featured-image,
-	.pulashock-magazine-grid > *:nth-child(2) .wp-block-post-featured-image,
-	.pulashock-magazine-grid > li:nth-child(3) .wp-block-post-featured-image,
-	.pulashock-magazine-grid > *:nth-child(3) .wp-block-post-featured-image {
-		flex: 0 0 auto !important;
-		width: 100% !important;
-	}
-
-	.pulashock-magazine-grid > li:nth-child(2) .wp-block-post-featured-image img,
-	.pulashock-magazine-grid > *:nth-child(2) .wp-block-post-featured-image img,
-	.pulashock-magazine-grid > li:nth-child(3) .wp-block-post-featured-image img,
-	.pulashock-magazine-grid > *:nth-child(3) .wp-block-post-featured-image img {
-		height: 160px !important;
-		aspect-ratio: unset !important;
-	}
-
-	.pulashock-magazine-grid > li:nth-child(4),
-	.pulashock-magazine-grid > *:nth-child(4) { grid-column: 1 / 7; grid-row: 3; }
-	.pulashock-magazine-grid > li:nth-child(5),
-	.pulashock-magazine-grid > *:nth-child(5) { grid-column: 7 / 13; grid-row: 3; }
-	.pulashock-magazine-grid > li:nth-child(6),
-	.pulashock-magazine-grid > *:nth-child(6) { grid-column: 1 / 13; grid-row: 4; }
-
-	.pulashock-magazine-grid > li:nth-child(1) { min-height: 420px !important; }
 
 	.pulashock-ticker-items > li { flex: 0 0 50%; }
 	.pulashock-ticker-items > li:nth-child(n+3) { display: none; }
@@ -1321,34 +1397,32 @@ a:hover {
 		grid-template-columns: 1fr !important;
 	}
 
-	.pulashock-magazine-grid > li,
-	.pulashock-magazine-grid > * {
-		grid-column: 1 !important;
-		grid-row: auto !important;
+	/* Blog list — stack vertically on mobile */
+	.pulashock-blog-item {
+		flex-direction: column !important;
 	}
 
-	.pulashock-magazine-grid > li:nth-child(1) .pulashock-post-card,
-	.pulashock-magazine-grid > *:nth-child(1) .pulashock-post-card {
-		min-height: 340px;
+	.pulashock-blog-item-thumb {
+		flex: none !important;
+		width: 100% !important;
 	}
 
-	.pulashock-magazine-grid > li:nth-child(2) .pulashock-post-card,
-	.pulashock-magazine-grid > *:nth-child(2) .pulashock-post-card,
-	.pulashock-magazine-grid > li:nth-child(3) .pulashock-post-card,
-	.pulashock-magazine-grid > *:nth-child(3) .pulashock-post-card {
-		flex-direction: row !important;
+	.pulashock-blog-item-body {
+		padding-left: 0 !important;
+		padding-top: var(--wp--preset--spacing--20);
 	}
 
-	.pulashock-magazine-grid > li:nth-child(2) .wp-block-post-featured-image,
-	.pulashock-magazine-grid > *:nth-child(2) .wp-block-post-featured-image,
-	.pulashock-magazine-grid > li:nth-child(3) .wp-block-post-featured-image,
-	.pulashock-magazine-grid > *:nth-child(3) .wp-block-post-featured-image {
-		flex: 0 0 110px !important;
-		width: 110px !important;
+	/* Sidebar below content on mobile */
+	.pulashock-blog-layout {
+		flex-direction: column !important;
 	}
 
-	.pulashock-magazine-grid > li:nth-child(n+4) .wp-block-post-excerpt,
-	.pulashock-magazine-grid > *:nth-child(n+4) .wp-block-post-excerpt { display: none; }
+	.pulashock-blog-sidebar {
+		position: static;
+		border-top: 1px solid var(--pls-border);
+		padding-top: var(--wp--preset--spacing--40);
+		margin-top: var(--wp--preset--spacing|40);
+	}
 
 	/* Slider */
 	.pulashock-slide .wp-block-cover__inner-container {
@@ -1372,8 +1446,8 @@ a:hover {
 
 	/* Reviews */
 	.pulashock-review-card {
-		flex: 0 0 240px !important;
-		min-width: 240px;
+		flex: 0 0 280px !important;
+		min-width: 280px;
 	}
 
 	.pulashock-carousel-track {
@@ -1393,8 +1467,8 @@ a:hover {
 	}
 
 	.pulashock-review-card {
-		flex: 0 0 82vw !important;
-		min-width: 82vw;
+		flex: 0 0 85vw !important;
+		min-width: 85vw;
 	}
 
 	.pulashock-ticker-items > li { flex: 0 0 100%; }
