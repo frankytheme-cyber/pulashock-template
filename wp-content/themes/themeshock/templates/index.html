@@ -1,0 +1,49 @@
+<!-- wp:template-part {"slug":"header","tagName":"header","theme":"themeshock"} /-->
+
+<!-- wp:group {"align":"full","className":"pulashock-page-hero","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|50","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"backgroundColor":"surface","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull pulashock-page-hero has-surface-background-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--40)">
+	<!-- wp:query-title {"type":"archive","textColor":"text"} /-->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","className":"pulashock-section","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull pulashock-section" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--40)">
+
+	<!-- wp:query {"queryId":0,"query":{"perPage":10,"postType":"post","orderBy":"date","order":"desc"}} -->
+	<div class="wp-block-query">
+
+		<!-- wp:post-template {"className":"pulashock-posts-grid"} -->
+			<!-- wp:group {"className":"pulashock-post-card","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+			<div class="wp-block-group pulashock-post-card">
+				<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/9","style":{"color":{}}} /-->
+				<!-- wp:group {"className":"pulashock-post-card-body","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"},"blockGap":"var:preset|spacing|10"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+				<div class="wp-block-group pulashock-post-card-body" style="padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)">
+					<!-- wp:post-terms {"term":"category","className":"pulashock-post-category","style":{"typography":{"fontSize":"0.7rem","fontWeight":"700","letterSpacing":"0.1em","textTransform":"uppercase"}}} /-->
+					<!-- wp:post-title {"isLink":true,"level":3} /-->
+					<!-- wp:post-excerpt {"moreText":"Leggi →","excerptLength":20} /-->
+					<!-- wp:post-date {"format":"d F Y","style":{"typography":{"fontSize":"0.75rem"}},"textColor":"text-muted"} /-->
+				</div>
+				<!-- /wp:group -->
+			</div>
+			<!-- /wp:group -->
+		<!-- /wp:post-template -->
+
+		<!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"center"}} -->
+			<!-- wp:query-pagination-previous /-->
+			<!-- wp:query-pagination-numbers /-->
+			<!-- wp:query-pagination-next /-->
+		<!-- /wp:query-pagination -->
+
+		<!-- wp:query-no-results -->
+			<!-- wp:paragraph {"textColor":"text-muted"} -->
+			<p class="has-text-muted-color has-text-color">Nessun articolo trovato.</p>
+			<!-- /wp:paragraph -->
+		<!-- /wp:query-no-results -->
+
+	</div>
+	<!-- /wp:query -->
+
+</div>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer","theme":"themeshock"} /-->
