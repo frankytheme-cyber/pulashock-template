@@ -118,13 +118,18 @@ $_pls_slide3_url = wp_get_attachment_url( $_pls_slide3_id ) ?: content_url( 'upl
 	<div class="wp-block-group alignfull pulashock-ticker has-accent-primary-background-color has-background" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
 
 		<!-- wp:paragraph {"className":"pulashock-ticker-label","style":{"typography":{"fontSize":"0.65rem","fontWeight":"700","letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"background"} -->
-		<p class="pulashock-ticker-label has-background-color has-text-color" style="font-size:0.65rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase">Ultime Notizie</p>
+		<p class="pulashock-ticker-label has-background-color has-text-color" style="font-size:0.65rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase">Trending</p>
 		<!-- /wp:paragraph -->
 
 		<!-- wp:query {"queryId":5,"query":{"perPage":4,"postType":"post","orderBy":"date","order":"desc","inherit":false}} -->
 		<div class="wp-block-query">
 			<!-- wp:post-template {"className":"pulashock-ticker-items","layout":{"type":"flex","flexWrap":"nowrap"}} -->
-				<!-- wp:post-title {"isLink":true,"level":3,"className":"pulashock-ticker-title","style":{"typography":{"fontSize":"0.78rem","fontWeight":"600"}},"textColor":"background"} /-->
+				<!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+				<div class="wp-block-group">
+					<!-- wp:post-terms {"term":"post_tag","className":"pulashock-ticker-tag","style":{"typography":{"fontSize":"0.6rem","fontWeight":"700","letterSpacing":"0.1em","textTransform":"uppercase"}}} /-->
+					<!-- wp:post-title {"isLink":true,"level":3,"className":"pulashock-ticker-title","style":{"typography":{"fontSize":"0.78rem","fontWeight":"600"}},"textColor":"background"} /-->
+				</div>
+				<!-- /wp:group -->
 			<!-- /wp:post-template -->
 		</div>
 		<!-- /wp:query -->

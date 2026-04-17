@@ -35,7 +35,7 @@
 	</div>
 	<!-- /wp:group -->
 
-	<!-- wp:query {"queryId":10,"query":{"perPage":6,"postType":"post","orderBy":"date","order":"desc","sticky":"","inherit":false},"align":"wide"} -->
+	<!-- wp:query {"queryId":10,"query":{"perPage":6,"postType":"post","orderBy":"date","order":"desc","offset":4,"sticky":"","inherit":false},"align":"wide"} -->
 	<div class="wp-block-query alignwide">
 
 		<!-- wp:post-template {"className":"pulashock-magazine-grid","layout":{"type":"grid","columnCount":3}} -->

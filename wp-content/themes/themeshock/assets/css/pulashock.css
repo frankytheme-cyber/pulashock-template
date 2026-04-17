@@ -357,17 +357,17 @@ header.wp-block-template-part + .wp-block-pattern {
 
 /* Animated underline CTA */
 .pulashock-editorial-link {
-	color: inherit !important;
+	color: #ffffff !important;
 	display: inline-flex;
 	align-items: center;
 	gap: 0.4rem;
-	border-bottom: 1px solid currentColor;
-	padding-bottom: 2px;
-	transition: gap var(--pls-transition), opacity var(--pls-transition);
+	border-bottom: 2px solid #ffffff;
+	padding-bottom: 3px;
+	transition: gap var(--pls-transition), border-color var(--pls-transition);
 }
 
 .pulashock-editorial-link:hover {
-	opacity: 0.7;
+	border-color: var(--pls-accent);
 	gap: 0.7rem;
 }
 
@@ -377,14 +377,14 @@ header.wp-block-template-part + .wp-block-pattern {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	height: 2px;
-	background: rgba(255,255,255,0.08);
+	height: 3px;
+	background: rgba(255,255,255,0.15);
 	z-index: 10;
 }
 
 .pulashock-slider-progress-bar {
 	height: 100%;
-	background: var(--pls-accent);
+	background: #ffffff;
 	width: 0%;
 	transition: width 0.1s linear;
 }
@@ -461,6 +461,22 @@ header.wp-block-template-part + .wp-block-pattern {
 	opacity: 0.7;
 }
 
+/* Tag in ticker */
+.pulashock-ticker-tag {
+	flex-shrink: 0;
+}
+
+.pulashock-ticker-tag a {
+	color: rgba(255, 255, 255, 0.6) !important;
+	font-family: var(--pls-font-body);
+	font-size: 0.6rem;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	white-space: nowrap;
+	text-decoration: none;
+}
+
 /* ─── Section Titles ──────────────────────────────────────────────────────── */
 
 .pulashock-section-title {
@@ -504,6 +520,7 @@ header.wp-block-template-part + .wp-block-pattern {
 
 .pulashock-intro-title {
 	color: var(--pls-text);
+	margin-top: 1.5rem;
 }
 
 .pulashock-intro-tag {
@@ -1320,14 +1337,16 @@ header.wp-block-template-part + .wp-block-pattern {
 }
 
 .pulashock-sidebar-categories li {
-	border-bottom: 1px solid var(--pls-border);
-}
-
-.pulashock-sidebar-categories li a {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	border-bottom: 1px solid var(--pls-border);
 	padding: 0.6rem 0;
+	font-size: 0.75rem;
+	color: var(--pls-text-muted);
+}
+
+.pulashock-sidebar-categories li a {
 	color: var(--pls-text) !important;
 	font-family: var(--pls-font-body);
 	font-size: 0.875rem;
@@ -1338,13 +1357,6 @@ header.wp-block-template-part + .wp-block-pattern {
 .pulashock-sidebar-categories li a:hover {
 	color: var(--pls-accent) !important;
 	padding-left: 0.4rem;
-}
-
-/* Post count in parentheses */
-.pulashock-sidebar-categories li a::after {
-	font-size: 0.75rem;
-	color: var(--pls-text-muted);
-	font-weight: 400;
 }
 
 /* Tag cloud */
