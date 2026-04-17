@@ -661,6 +661,142 @@ header.wp-block-template-part + .wp-block-pattern {
 	width: 100%;
 }
 
+/* ─── Featured Posts — Editorial Layout ───────────────────────────────────── */
+
+.pulashock-featured-section {
+	background-color: var(--pls-surface);
+	border-top: 1px solid var(--pls-border);
+}
+
+/* Hero card — left column */
+.pulashock-featured-hero-list {
+	list-style: none !important;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.pulashock-featured-hero-card {
+	height: 100%;
+	overflow: hidden;
+}
+
+.pulashock-featured-hero-image {
+	overflow: hidden;
+}
+
+.pulashock-featured-hero-card .wp-block-post-featured-image img {
+	width: 100% !important;
+	height: 100% !important;
+	object-fit: cover !important;
+	transition: transform 0.5s ease;
+}
+
+.pulashock-featured-hero-card:hover .wp-block-post-featured-image img {
+	transform: scale(1.03);
+}
+
+.pulashock-featured-hero-card .wp-block-post-featured-image:not(:has(img)) {
+	background: linear-gradient(135deg, var(--pls-border) 0%, var(--pls-surface) 100%);
+	aspect-ratio: 16/10;
+}
+
+.pulashock-featured-hero-body .wp-block-post-title a {
+	color: var(--pls-text) !important;
+	text-decoration: none;
+	font-family: var(--pls-font-heading);
+	transition: color var(--pls-transition);
+}
+
+.pulashock-featured-hero-body .wp-block-post-title a:hover {
+	color: var(--pls-accent) !important;
+}
+
+.pulashock-featured-hero-body .wp-block-post-excerpt p {
+	margin: 0;
+}
+
+.pulashock-featured-hero-body .wp-block-post-excerpt__more-link {
+	display: none;
+}
+
+/* Side list — right column */
+.pulashock-featured-side-list {
+	display: flex !important;
+	flex-direction: column !important;
+	gap: 0 !important;
+	list-style: none !important;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.pulashock-featured-side-item {
+	padding: 1.1rem 0;
+	border-bottom: 1px solid var(--pls-border);
+	align-items: flex-start !important;
+}
+
+.pulashock-featured-side-list > li:first-child .pulashock-featured-side-item {
+	padding-top: 0;
+}
+
+.pulashock-featured-side-list > li:last-child .pulashock-featured-side-item {
+	border-bottom: none;
+	padding-bottom: 0;
+}
+
+.pulashock-featured-side-thumb {
+	flex: 0 0 120px !important;
+	width: 120px !important;
+	overflow: hidden;
+}
+
+.pulashock-featured-side-thumb img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.5s ease;
+}
+
+.pulashock-featured-side-item:hover .pulashock-featured-side-thumb img {
+	transform: scale(1.04);
+}
+
+.pulashock-featured-side-body {
+	flex: 1;
+	min-width: 0;
+}
+
+.pulashock-featured-side-body .wp-block-post-title a {
+	color: var(--pls-text) !important;
+	text-decoration: none;
+	font-family: var(--pls-font-heading);
+	transition: color var(--pls-transition);
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.pulashock-featured-side-body .wp-block-post-title a:hover {
+	color: var(--pls-accent) !important;
+}
+
+.pulashock-featured-side-body .wp-block-post-excerpt p {
+	color: var(--pls-text-muted);
+	font-size: 0.8rem;
+	line-height: 1.5;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	margin: 0;
+}
+
+.pulashock-featured-side-body .wp-block-post-excerpt__more-link {
+	display: none;
+}
+
+
 /* ─── Reviews Carousel ────────────────────────────────────────────────────── */
 
 .pulashock-reviews-section {
@@ -1392,6 +1528,8 @@ footer.wp-block-template-part {
 
 	.pulashock-ticker-items > li { flex: 0 0 50%; }
 	.pulashock-ticker-items > li:nth-child(n+3) { display: none; }
+
+
 }
 
 @media (max-width: 768px) {
@@ -1437,6 +1575,16 @@ footer.wp-block-template-part {
 		border-top: 1px solid var(--pls-border);
 		padding-top: var(--wp--preset--spacing--40);
 		margin-top: var(--wp--preset--spacing|40);
+	}
+
+	/* Featured posts — mobile: stack columns */
+	.pulashock-featured-layout {
+		flex-direction: column !important;
+	}
+
+.pulashock-featured-side-thumb {
+		flex: 0 0 100px !important;
+		width: 100px !important;
 	}
 
 	/* Slider */
