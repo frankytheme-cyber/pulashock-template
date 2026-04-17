@@ -62,6 +62,21 @@ a:hover {
 	color: var(--pls-text);
 }
 
+/* ─── Global Layout Spacing ──────────────────────────────────────────────── */
+
+/* Remove margin-top from first block after header in all templates */
+header.wp-block-template-part + .wp-block-group,
+header.wp-block-template-part + .wp-block-cover,
+header.wp-block-template-part + .wp-block-pattern {
+	margin-top: 0 !important;
+}
+
+/* Remove all default block margins on full-width sections */
+.wp-block-group.alignfull {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+
 /* ─── WordPress Core Block Overrides ─────────────────────────────────────── */
 
 .wp-block-post-content > * + * {

@@ -30,8 +30,8 @@ $_pls_slide3_url = wp_get_attachment_url( $_pls_slide3_id ) ?: content_url( 'upl
 
 				<!-- wp:group {"className":"pulashock-slide-body","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained","contentSize":"820px","justifyContent":"left"}} -->
 				<div class="wp-block-group pulashock-slide-body">
-					<!-- wp:paragraph {"className":"pulashock-slide-kicker","style":{"typography":{"fontSize":"0.7rem","fontWeight":"700","letterSpacing":"0.18em","textTransform":"uppercase"}},"textColor":"accent-primary"} -->
-					<p class="pulashock-slide-kicker has-accent-primary-color has-text-color" style="font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase">● Musica &nbsp;/&nbsp; 10 Aprile 2025</p>
+					<!-- wp:paragraph {"className":"pulashock-slide-kicker","style":{"typography":{"fontSize":"0.7rem","fontWeight":"700","letterSpacing":"0.18em","textTransform":"uppercase"}},"textColor":"text-light"} -->
+					<p class="pulashock-slide-kicker has-text-light-color has-text-color" style="font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase">● Musica &nbsp;/&nbsp; 10 Aprile 2025</p>
 					<!-- /wp:paragraph -->
 					<!-- wp:heading {"level":1,"className":"pulashock-slide-title","fontFamily":"bebas-neue","style":{"typography":{"fontSize":"clamp(2.75rem,6vw,5.5rem)","lineHeight":"0.93","letterSpacing":"0.01em"}},"textColor":"text-light"} -->
 					<h1 class="wp-block-heading pulashock-slide-title has-text-light-color has-text-color has-bebas-neue-font-family" style="font-size:clamp(2.75rem,6vw,5.5rem);line-height:0.93;letter-spacing:0.01em">I Migliori Album del 2025: La Nostra Selezione</h1>
@@ -54,8 +54,8 @@ $_pls_slide3_url = wp_get_attachment_url( $_pls_slide3_id ) ?: content_url( 'upl
 
 				<!-- wp:group {"className":"pulashock-slide-body","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained","contentSize":"820px","justifyContent":"left"}} -->
 				<div class="wp-block-group pulashock-slide-body">
-					<!-- wp:paragraph {"className":"pulashock-slide-kicker","style":{"typography":{"fontSize":"0.7rem","fontWeight":"700","letterSpacing":"0.18em","textTransform":"uppercase"}},"textColor":"accent-primary"} -->
-					<p class="pulashock-slide-kicker has-accent-primary-color has-text-color" style="font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase">● Recensione &nbsp;/&nbsp; 9 Aprile 2025</p>
+					<!-- wp:paragraph {"className":"pulashock-slide-kicker","style":{"typography":{"fontSize":"0.7rem","fontWeight":"700","letterSpacing":"0.18em","textTransform":"uppercase"}},"textColor":"text-light"} -->
+					<p class="pulashock-slide-kicker has-text-light-color has-text-color" style="font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase">● Recensione &nbsp;/&nbsp; 9 Aprile 2025</p>
 					<!-- /wp:paragraph -->
 					<!-- wp:heading {"level":2,"className":"pulashock-slide-title","fontFamily":"bebas-neue","style":{"typography":{"fontSize":"clamp(2.75rem,6vw,5.5rem)","lineHeight":"0.93","letterSpacing":"0.01em"}},"textColor":"text-light"} -->
 					<h2 class="wp-block-heading pulashock-slide-title has-text-light-color has-text-color has-bebas-neue-font-family" style="font-size:clamp(2.75rem,6vw,5.5rem);line-height:0.93;letter-spacing:0.01em">Daft Punk – Random Access Memories (10th Anniversary)</h2>
@@ -78,8 +78,8 @@ $_pls_slide3_url = wp_get_attachment_url( $_pls_slide3_id ) ?: content_url( 'upl
 
 				<!-- wp:group {"className":"pulashock-slide-body","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained","contentSize":"820px","justifyContent":"left"}} -->
 				<div class="wp-block-group pulashock-slide-body">
-					<!-- wp:paragraph {"className":"pulashock-slide-kicker","style":{"typography":{"fontSize":"0.7rem","fontWeight":"700","letterSpacing":"0.18em","textTransform":"uppercase"}},"textColor":"accent-primary"} -->
-					<p class="pulashock-slide-kicker has-accent-primary-color has-text-color" style="font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase">● Speciale &nbsp;/&nbsp; 8 Aprile 2025</p>
+					<!-- wp:paragraph {"className":"pulashock-slide-kicker","style":{"typography":{"fontSize":"0.7rem","fontWeight":"700","letterSpacing":"0.18em","textTransform":"uppercase"}},"textColor":"text-light"} -->
+					<p class="pulashock-slide-kicker has-text-light-color has-text-color" style="font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase">● Speciale &nbsp;/&nbsp; 8 Aprile 2025</p>
 					<!-- /wp:paragraph -->
 					<!-- wp:heading {"level":2,"className":"pulashock-slide-title","fontFamily":"bebas-neue","style":{"typography":{"fontSize":"clamp(2.75rem,6vw,5.5rem)","lineHeight":"0.93","letterSpacing":"0.01em"}},"textColor":"text-light"} -->
 					<h2 class="wp-block-heading pulashock-slide-title has-text-light-color has-text-color has-bebas-neue-font-family" style="font-size:clamp(2.75rem,6vw,5.5rem);line-height:0.93;letter-spacing:0.01em">Festival Estivi 2025: La Guida Definitiva agli Eventi</h2>

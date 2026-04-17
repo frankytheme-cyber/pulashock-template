@@ -8,8 +8,8 @@
  */
 ?>
 
-<!-- wp:group {"align":"full","className":"pulashock-section pulashock-reviews-section","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|70","left":"0","right":"0"},"blockGap":"var:preset|spacing|40"}},"backgroundColor":"surface","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull pulashock-section pulashock-reviews-section has-surface-background-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-right:0;padding-bottom:var(--wp--preset--spacing--70);padding-left:0">
+<!-- wp:group {"align":"full","className":"pulashock-section pulashock-reviews-section","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80","left":"0","right":"0"},"blockGap":"var:preset|spacing|40"}},"backgroundColor":"surface","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull pulashock-section pulashock-reviews-section has-surface-background-color has-background" style="padding-top:var(--wp--preset--spacing--80);padding-right:0;padding-bottom:var(--wp--preset--spacing--80);padding-left:0">
 
 	<!-- wp:group {"className":"pulashock-section-header","style":{"spacing":{"padding":{"left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
 	<div class="wp-block-group pulashock-section-header" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">

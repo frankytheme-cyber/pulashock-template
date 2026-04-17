@@ -82,7 +82,8 @@
 				{ "size": "2rem",    "slug": "40", "name": "4" },
 				{ "size": "3rem",    "slug": "50", "name": "5" },
 				{ "size": "5rem",    "slug": "60", "name": "6" },
-				{ "size": "8rem",    "slug": "70", "name": "7" }
+				{ "size": "8rem",    "slug": "70", "name": "7" },
+			{ "size": "11rem",   "slug": "80", "name": "8" }
 			]
 		},
 		"typography": {
