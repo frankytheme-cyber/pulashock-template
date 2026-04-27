@@ -299,6 +299,42 @@ class PulashockCarousel {
 	}
 }
 
+/* ─── Mobile Nav Toggle ───────────────────────────────────────────────────── */
+
+function pulashockInitMobileNav() {
+	document.querySelectorAll('.wp-block-navigation').forEach((nav) => {
+		const openBtn  = nav.querySelector('.wp-block-navigation__responsive-container-open');
+		const closeBtn = nav.querySelector('.wp-block-navigation__responsive-container-close');
+		const container = nav.querySelector('.wp-block-navigation__responsive-container');
+
+		if (!openBtn || !container) return;
+
+		// If the core Interactivity API already bound this button, skip.
+		if (openBtn.dataset.wpOnClick || openBtn.dataset.wpOn) return;
+
+		const open = () => {
+			container.classList.add('is-menu-open');
+			container.setAttribute('aria-hidden', 'false');
+			openBtn.setAttribute('aria-expanded', 'true');
+			document.body.style.overflow = 'hidden';
+		};
+
+		const close = () => {
+			container.classList.remove('is-menu-open');
+			container.setAttribute('aria-hidden', 'true');
+			openBtn.setAttribute('aria-expanded', 'false');
+			document.body.style.overflow = '';
+		};
+
+		openBtn.addEventListener('click', open);
+		if (closeBtn) closeBtn.addEventListener('click', close);
+
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape' && container.classList.contains('is-menu-open')) close();
+		});
+	});
+}
+
 /* ─── Init on DOM Ready ───────────────────────────────────────────────────── */
 
 function pulashockInit() {
@@ -311,6 +347,8 @@ function pulashockInit() {
 	document.querySelectorAll('.pulashock-carousel-wrapper').forEach((el) => {
 		new PulashockCarousel(el);
 	});
+
+	pulashockInitMobileNav();
 }
 
 if (document.readyState === 'loading') {
